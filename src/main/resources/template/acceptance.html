@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <script type="text/javascript">
+      document.getElementByName("accept_conditions").disabled = "true";
+
+      if (document.getElementByName("acceptance").checked) {
+        document.getElementByName("accept_conditions").disabled = "";
+        //"accpetance"というチェックボックスをチェックした時に、”accept_conditions”のボタンを活性化
+
+      }else{
+        document.getElementByName("accept_conditions").disabled = "true";
+        //"accpetance"というチェックボックスを外した時に、”accept_conditions”のボタンを非活性化
+      }
+    </script>
+
     <title>ご加入条件確認</title>
 
     <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"/>
@@ -60,7 +73,10 @@
                             <label>全ての加入条件を満たしていることを確認しました。</label>
                         </div>
 
-                        <button class="ui fluid teal button">次へ（個人情報の入力）</button>
+                        <button class="ui fluid teal button" name = "accept_conditions">次へ（個人情報の入力）</button>
+                        <!--
+                        上記にname = "accept_conditions"追加した
+                         -->
                     </form>
                 </div>
             </div>

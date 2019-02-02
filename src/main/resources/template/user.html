@@ -33,7 +33,11 @@
 
                         <div class="ui horizontal divider">ご本人について</div>
 
+
                         <div class="ui statement">※「＊」は入力必須項目です。</div>
+                        <!--
+                        上記がエラーコメント
+                        -->
 
                         <table class="ui celled table">
                             <tbody>
@@ -49,6 +53,9 @@
                                         <p th:if="${errors.hasError('kanjiName')}"
                                            th:text="${errors.getMessage('kanjiName')}" class="error-message">
                                         </p>
+                                        <!--”kanziName”というテキストボックスにエラーがあったら、
+                                        ”text”（下に表示する文字）に”kanjiame”に対応するエラーコメントを表示する
+                                        -->
                                     </div>
                                 </td>
                             </tr>

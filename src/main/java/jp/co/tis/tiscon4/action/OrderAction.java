@@ -40,6 +40,7 @@ public class OrderAction {
      * @return HTTPレスポンス
      */
     @InjectForm(form = IndexForm.class)
+    //上記で入力データが不正かどうかを判断
     @OnError(type = ApplicationException.class, path = "index.html")
     public HttpResponse accept(HttpRequest req, ExecutionContext ctx) {
         IndexForm indexForm = ctx.getRequestScopedVar("form");
@@ -62,6 +63,8 @@ public class OrderAction {
      */
     @InjectForm(form = AcceptForm.class)
     @OnError(type = ApplicationException.class, path = "acceptance.html")
+    //上記で不正があったら、pathの場所に飛ばす
+
     public HttpResponse inputUser(HttpRequest req, ExecutionContext ctx) {
         ctx.setRequestScopedVar("form", new UserForm());
         ctx.setRequestScopedVar("genderTypes", GenderType.values());
