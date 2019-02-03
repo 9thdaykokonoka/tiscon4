@@ -102,7 +102,13 @@ public class OrderAction {
         ctx.setRequestScopedVar("form", new JobForm());
         ctx.setRequestScopedVar("industryTypes", IndustryType.values());
 
-        return new HttpResponse("job.html");
+        if(form.getJob().equals("経営自営")||form.getJob().equals("会社員")||form.getJob().equals("公務員")||form.getJob().equals("民間団体")||form.getJob().equals("他無職")||form.getJob().equals("契約派遣")){
+            return new HttpResponse("job.html");
+        }else{
+            return new HttpResponse("completed.html");
+        }
+
+       //return new HttpResponse("job.html");
     }
 
     /**
