@@ -1,5 +1,5 @@
 body {
-    background: #edf9f9;
+    background: #fffacd;
     background-size: cover;
     background-attachment: fixed;
     padding: 0;
@@ -135,7 +135,7 @@ ul.label {
     background:#FFF;
     border-radius:10px;
     width: 250px;
-    height: 300px;
+    height: 400px;
 }
 
 .index-text{
@@ -148,7 +148,7 @@ ul.label {
 .index-button {
     display: inline-block;
     margin: 0 .25em 0 0;
-    padding: .78571429em 1.5em;
+    padding: .90571429em 1.5em;
     line-height: 1em;
     border-radius: .28571429rem;
     position:relative;
