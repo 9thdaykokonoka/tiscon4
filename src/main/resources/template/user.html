@@ -147,7 +147,7 @@ function enter(){
                                       <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
 
                                     　郵便番号入力フィールド(7桁) -->
-                                        <input type="text" name="zip11" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
+                                        <input type="text" class="zipcode" name="zipCode" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" th:value="${form.zipCode}"/>
 
 
 
@@ -157,7 +157,7 @@ function enter(){
 
 
 
-                                            <input type="text" name="addr11" size="60">
+
                                         </p>
                                     </div>
                                 </td>
@@ -172,9 +172,10 @@ function enter(){
                                     <div class="field" th:classappend="${errors.hasError('address')} ? 'error'">
                                         <!--
                                          <input type="text" name="address" th:value="${form.address}"/>
-
+                                            <input type="text" name="addr11" size="60">
                                           住所入力フィールド(都道府県+以降の住所) -->
-                                        <input type="text" name="addr11" size="60">
+                                        <input type="text" name="address" size="60" th:value="${form.address}">
+
                                         <p th:if="${errors.hasError('address')}"
                                            th:text="${errors.getMessage('address')}" class="error-message">
                                         </p>
