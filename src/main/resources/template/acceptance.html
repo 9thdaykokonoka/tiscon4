@@ -2,15 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <script type="text/javascript">
-      document.getElementByName("accept_conditions").disabled = "true";
+    window.onload = function(){
+      if(document.getElementById("aceeptance_id").checked){
+            document.getElementById("accept_conditions").disabled = "";
+            // "accpetance"というチェックボックスをチェックした時に、”accept_conditions”のボタンを活性化
+            document.getElementById("kekka").innerHTML = ""
+        }else{
+            document.getElementById("accept_conditions").disabled = "true";
+            document.getElementById("kekka").innerHTML = "チェックをつけてください"
+        }
+       }
+       //初期値の設定
 
-      if (document.getElementByName("acceptance").checked) {
-        document.getElementByName("accept_conditions").disabled = "";
-        //"accpetance"というチェックボックスをチェックした時に、”accept_conditions”のボタンを活性化
-
-      }else{
-        document.getElementByName("accept_conditions").disabled = "true";
-        //"accpetance"というチェックボックスを外した時に、”accept_conditions”のボタンを非活性化
+      function ChangeActive(){
+        if(document.getElementById("aceeptance_id").checked){
+            document.getElementById("accept_conditions").disabled = "";
+            document.getElementById("kekka").innerHTML = ""
+            // "accpetance"というチェックボックスをチェックした時に、”accept_conditions”のボタンを活性化
+        }else{
+            document.getElementById("accept_conditions").disabled = "true";
+            document.getElementById("kekka").innerHTML = "チェックをつけてください";
+        }
       }
     </script>
 
@@ -69,14 +81,16 @@
                         </div>
 
                         <div class="ui checkbox" style="margin: 10px;">
-                            <input type="checkbox" name="acceptance" th:value="1"/>
+                            <input type="checkbox" name="acceptance" id = "aceeptance_id" onclick="ChangeActive()" th:value="1"/>
                             <label>全ての加入条件を満たしていることを確認しました。</label>
                         </div>
-
-                        <button class="ui fluid teal button" name = "accept_conditions">次へ（個人情報の入力）</button>
+                        <div id="kekka" style="color:red">
+                        </div>
+                        <button class="ui fluid teal button" id = "accept_conditions">次へ（個人情報の入力）</button>
                         <!--
-                        上記にname = "accept_conditions"追加した
+                        上記にname = "accept_conditions"追加
                          -->
+
                     </form>
                 </div>
             </div>
