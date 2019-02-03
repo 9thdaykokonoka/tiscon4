@@ -141,14 +141,16 @@ function enter(){
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
+                                    <p>例：1234567</p>
                                     <div class="field" th:classappend="${errors.hasError('zipCode')} ? 'error'">
-                                        <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                        <!--
+                                      <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
 
-                                        <!-- ▼郵便番号入力フィールド(7桁) -->ふたつめ
+                                    　郵便番号入力フィールド(7桁) -->
                                         <input type="text" name="zip11" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
-                                        <!-- ▼住所入力フィールド(都道府県+以降の住所) -->ふたつめ
-                                        <input type="text" name="addr11" size="60">
+
+
+
 
                                         <p th:if="${errors.hasError('zipCode')}"
                                            th:text="${errors.getMessage('zipCode')}" class="error-message">
@@ -168,7 +170,11 @@ function enter(){
                                 <td>
                                     <p>例：東京都新宿区西新宿８－１７－１</p>
                                     <div class="field" th:classappend="${errors.hasError('address')} ? 'error'">
-                                        <input type="text" name="address" th:value="${form.address}"/>
+                                        <!--
+                                         <input type="text" name="address" th:value="${form.address}"/>
+
+                                          住所入力フィールド(都道府県+以降の住所) -->
+                                        <input type="text" name="addr11" size="60">
                                         <p th:if="${errors.hasError('address')}"
                                            th:text="${errors.getMessage('address')}" class="error-message">
                                         </p>
