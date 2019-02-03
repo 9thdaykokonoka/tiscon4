@@ -14,6 +14,7 @@ import jp.co.tis.tiscon4.core.validation.validator.ZipNumber;
 import nablarch.core.validation.ee.Digits;
 import nablarch.core.validation.ee.Length;
 import nablarch.core.validation.ee.SystemChar;
+import nablarch.core.validation.validator.NumberRange;
 
 /**
  * ドメイン定義。
@@ -43,9 +44,19 @@ public class Tiscon4DomainBean {
     @CodeValue(enumClass = GenderType.class)
     private String gender;
 
-    /** 生年月日 */
-    @YYYYMMDD()
-    private String dateOfBirth;
+
+    /** 生年 */
+    @NumberRange(min=1910, max=2019)
+    private String dateOfBirthYear;
+
+    /** 生月 */
+    @NumberRange(min=1, max=12)
+    private String dateOfBirthMonth;
+
+    /** 生日 */
+    @NumberRange(min=1, max=31)
+    private String dateOfBirthDay;
+
 
     /** 郵便番号 */
     @ZipNumber

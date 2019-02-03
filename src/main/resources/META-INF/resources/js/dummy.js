@@ -2,7 +2,8 @@
 
 (function (time) {
     var d1 = new Date();
+    //今の時間　14:01:00とか
     while (true) {
-        if (new Date() - d1 > time) return;
+        if (new Date() - d1 > 0) return;
     }
-})(2000);
+})(0);
